@@ -1,0 +1,9 @@
+# 23. Создайте внутреннюю сеть типа overlay, которую вы назовете overmind.
+
+docker network create -d overlay overmind
+
+# How to check:
+# docker network ls
+
+# Additionally
+# -d - драйвер для управления сетью (по умолчанию bridge)

@@ -1,0 +1,25 @@
+# 12. Запустите mysql контейнер в качестве фоновой задачи. Он должен иметь возможность
+# перезапускаться самостоятельно в случае ошибки, и ПАРОЛЬ root базы данных должен 
+# быть Kerrigan. Вы также убедитесь, что база данных хранится в hatchery томе, что 
+# контейнер непосредственно создает базу данных с ИМЕНЕМ zerglings и что сам контейнер 
+# имеет ИМЯ spawning-pool.
+
+docker run -d --name spawning-pool --restart=on-failure:10 -e MYSQL_ROOT_PASSWORD=Kerrigan -e MYSQL_DATABASE=zerglings -v hatchery:/var/lib/mysql mysql --default-authentication-plugin=mysql_native_password
+
+# -d - контейнер запускается и запускается в фоновом режиме.
+# --restart=on-failure:10 - Перезагрузите контейнер, если он остановится.
+# -e - установить переменные среды.
+# Далее подробнее https://hub.docker.com/_/mysql
+# MYSQL_ROOT_PASSWORD - устанавливаем свой пароль.
+# MYSQL_DATABASE -> Позволяет указать имя базы данных в нашем случае
+# Т.к. wordpress latest не работает с mysql latest container:
+# mysql --default-authentication-plugin=mysql_native_password 
+# MySQL 8 изменил метод аутентификации пароля. Вы ищете плагин mysql_native_password 
+# смотри -> https://dev.mysql.com/doc/refman/8.0/en/native-pluggable-authentication.html
+
+# если заново создаем, то нужно удалить hatchery и установить заново 
+# docker container ls -a
+# mysql id берем
+# docker container kill (ID контейнера)
+# docker container rm (ID контейнера)
+# docker volume rm hatchery

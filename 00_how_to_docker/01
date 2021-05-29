@@ -1,0 +1,20 @@
+# 01. Cоздайте виртуальную машину с docker-machine использованием virtualbox
+# драйвера и имени Char
+
+docker-machine create --driver virtualbox Char
+
+# How to check:
+# docker-machine ls
+
+# Additionally
+# restart -> docker-machine start Char
+# start -> docker-machine restart Char
+
+# Deamon is not connected -> 
+# docker-machine regenerate-certs Char
+# eval $(docker-machine env Char)
+# docker version
+
+# Удалить docker-machine:
+# docker-machine kill Char
+# docker-machine rm Char

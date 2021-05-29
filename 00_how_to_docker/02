@@ -1,0 +1,6 @@
+# 02. Получите IP-адрес Char виртуальной машины.
+
+docker-machine ip Char
+
+# Additionally
+# https://docs.docker.com/machine/reference/ip/

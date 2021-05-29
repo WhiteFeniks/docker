@@ -1,0 +1,4 @@
+# 21. Создайте еще одну виртуальную машину с docker-machine помощью virtualbox драйвера и назовите ее Aiur
+
+docker-machine create --driver virtualbox Aiur
+

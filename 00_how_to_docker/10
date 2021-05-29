@@ -1,0 +1,10 @@
+# 10.Создайте том с именем hatchery
+
+docker volume create --name hatchery
+
+# How to check:
+# Список томов:
+# docker volume ls 
+
+# Additionally:
+# --name — для указания имени тома

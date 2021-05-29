@@ -1,0 +1,10 @@
+# 26. Запустите 42school/engineering-bay службу в двух репликах и убедитесь, что она работает
+# правильно (см. документацию, предоставленную по адресу hub.docker.com). Эта служба будет иметь 
+# имя engineering-bay и будет находиться в overmind сети.
+
+docker service create -d --network overmind --name engineering-bay --replicas 2 -e OC_USERNAME=root -e OC_PASSWD=root 42school/engineering-bay
+
+# Нужен запуск orbital-command на вашем хосте или кластере, доступный с тем же именем в вашей сети.
+# Чтобы подключиться к этому orbital-command, надо установить
+# OC_USERNAME - имя пользователя для orbital-command
+# OC_PASSWD - пароль для orbital-command

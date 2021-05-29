@@ -1,0 +1,7 @@
+# 29. Отображение всех задач marines сервиса.
+
+docker service ps marines
+
+# Additionally:
+# ps — перечисление задач одной или нескольких служб
+

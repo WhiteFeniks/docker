@@ -1,0 +1,9 @@
+# 28. ... Черт возьми, группа зергов атакует orbital-command, и отключение engineering-bay
+# службы не поможет вообще... Вы должны послать отряд морских пехотинцев, чтобы устранить незваных гостей.
+# Запустите a 42school/marine-squadв двух репликах и убедитесь, что служба работает правильно 
+# (см. Документацию, предоставленную по адресу hub.docker.com). Эта служба будет называться... marines
+# и будет в overmindсети.
+
+docker service create -d --network overmind --name marines --replicas 2 -e OC_USERNAME=root -e OC_PASSWD=root 42school/marine-squad
+
+# по orbital-command - смотри 26 вопрос

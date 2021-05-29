@@ -1,0 +1,8 @@
+# 27. Получите в режиме реального времени журналы выполнения одной из задач engineering-bay сервиса.
+
+docker service logs engineering-bay
+
+
+# Additionally:
+# подробнее - https://docs.docker.com/engine/reference/commandline/service_logs/
+

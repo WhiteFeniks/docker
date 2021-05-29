@@ -1,0 +1,7 @@
+# 20. Создайте локальный кластер, Char виртуальная машина должна быть его менеджером
+
+docker swarm init --advertise-addr $(docker-machine ip Char)
+
+# Additionally:
+# Из документации:
+# docker swarm init --advertise-addr <MANAGER-IP>

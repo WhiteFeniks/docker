@@ -1,0 +1,4 @@
+# 18.Снова запустите overlord контейнер.
+
+docker restart overlord
+
